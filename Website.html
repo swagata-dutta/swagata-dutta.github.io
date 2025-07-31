@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranjan Sarkar - Academic Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Using a more modern font and setting up basic styles */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Adding a subtle fade-in animation for sections */
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300">
+
+    <!-- Theme Switcher Logic to prevent Flash of Unstyled Content (FOUC) -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+    </script>
+
+    <!-- Header and Navigation -->
+    <header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-md shadow-slate-200/50 dark:shadow-slate-800/50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-slate-900 dark:text-white">Ranjan Sarkar</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#about" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">About</a>
+                <a href="#academic" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Academic</a>
+                <a href="#research" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Research</a>
+                <a href="#publications" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Publications</a>
+                <a href="#contact" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- About Section -->
+        <section id="about" class="min-h-[80vh] flex items-center section-fade-in">
+            <div class="grid md:grid-cols-3 gap-12 items-center">
+                <div class="md:col-span-1 flex justify-center">
+                    <img src="https://placehold.co/300x300/e2e8f0/334155?text=Ranjan\nSarkar" alt="Ranjan Sarkar" class="rounded-full w-64 h-64 md:w-72 md:h-72 object-cover shadow-lg">
+                </div>
+                <div class="md:col-span-2">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white">Ranjan Sarkar</h1>
+                    <p class="text-lg text-cyan-700 dark:text-cyan-400 font-medium mb-6">PhD Scholar, Artificial Intelligence, IIT Kharagpur</p>
+                    <p class="mb-4">
+                        I am a PhD Scholar at the Indian Institute of Technology, Kharagpur, specializing in Artificial Intelligence. My research is focused on advancing the capabilities and understanding of intelligent systems.
+                    </p>
+                    <p>
+                        My primary research interests include **Reinforcement Learning**, **Deep Learning**, and their practical applications in complex domains. I am passionate about developing algorithms that are not only high-performing but also efficient and interpretable.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Background Section (Timeline View) -->
+        <section id="academic" class="py-20 section-fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12 text-slate-900 dark:text-white">Academic Background</h2>
+            <div class="max-w-3xl mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent dark:before:via-slate-700">
+                <!-- Timeline Item 1: PhD -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-cyan-500 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <h3 class="font-bold text-slate-900 dark:text-white">PhD in Artificial Intelligence</h3>
+                            <time class="font-medium text-cyan-600 dark:text-cyan-400">2021 - Present</time>
+                        </div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Indian Institute of Technology, Kharagpur</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 2: Masters -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-cyan-500 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <h3 class="font-bold text-slate-900 dark:text-white">Master of Technology (M.Tech)</h3>
+                            <time class="font-medium text-cyan-600 dark:text-cyan-400">2019 - 2021</time>
+                        </div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">[Your University Name]</p>
+                    </div>
+                </div>
+                <!-- Timeline Item 3: Bachelors -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-cyan-500 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                       <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <h3 class="font-bold text-slate-900 dark:text-white">Bachelor of Technology (B.Tech)</h3>
+                            <time class="font-medium text-cyan-600 dark:text-cyan-400">2015 - 2019</time>
+                        </div>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">[Your College Name]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="py-20 bg-slate-100 dark:bg-slate-800/50 rounded-lg section-fade-in">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Research Interests</h2>
+                <p class="text-lg mb-10">My work aims to build more intelligent and autonomous systems. Key areas of my research include:</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-cyan-700 dark:text-cyan-400">Deep Reinforcement Learning</h3>
+                        <p>Developing novel RL algorithms for complex decision-making tasks, especially in robotics and autonomous systems.</p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-cyan-700 dark:text-cyan-400">Model-Based RL</h3>
+                        <p>Investigating methods for learning world models to improve sample efficiency and planning capabilities in RL agents.</p>
+                    </div>
+                    <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-cyan-700 dark:text-cyan-400">Interpretability</h3>
+                        <p>Exploring techniques to make deep neural networks more transparent and understandable, building trust in AI systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-20 section-fade-in">
+            <h2 class="text-3xl font-bold text-center mb-12 text-slate-900 dark:text-white">Selected Publications</h2>
+            <div class="max-w-4xl mx-auto space-y-6">
+                <!-- Publication Item 1 -->
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg text-slate-900 dark:text-white">[Title of Recent Paper]</h3>
+                    <p class="text-slate-600 dark:text-slate-300"><strong>Ranjan Sarkar</strong>, et al.</p>
+                    <p class="italic text-slate-500 dark:text-slate-400">[Journal or Conference Name], [Year]</p>
+                    <div class="mt-3 space-x-4">
+                        <a href="#" class="text-cyan-600 dark:text-cyan-400 hover:underline font-medium">[PDF]</a>
+                        <a href="#" class="text-cyan-600 dark:text-cyan-400 hover:underline font-medium">[Code]</a>
+                        <a href="#" class="text-cyan-600 dark:text-cyan-400 hover:underline font-medium">[DOI]</a>
+                    </div>
+                </div>
+                <!-- Publication Item 2 -->
+                 <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
+                    <h3 class="font-semibold text-lg text-slate-900 dark:text-white">[Another Paper Title]</h3>
+                    <p class="text-slate-600 dark:text-slate-300"><strong>Ranjan Sarkar</strong>, et al.</p>
+                    <p class="italic text-slate-500 dark:text-slate-400">[Journal or Conference Name], [Year]</p>
+                     <div class="mt-3 space-x-4">
+                        <a href="#" class="text-cyan-600 dark:text-cyan-400 hover:underline font-medium">[PDF]</a>
+                        <a href="#" class="text-cyan-600 dark:text-cyan-400 hover:underline font-medium">[Slides]</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-slate-100 dark:bg-slate-800/50 rounded-lg section-fade-in">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4 text-slate-900 dark:text-white">Get In Touch</h2>
+                <p class="mb-8">I am open to discussing research, collaborations, or any related opportunities. Please feel free to contact me.</p>
+                <div class="text-lg space-y-4">
+                    <p><strong>Email:</strong> <a href="mailto:youremail@domain.com" class="text-cyan-600 dark:text-cyan-400 hover:underline">youremail@domain.com</a></p>
+                </div>
+                <div class="flex justify-center space-x-6 mt-8">
+                    <a href="https://scholar.google.com/citations?user=VTnhA4wAAAAJ&hl=en" class="text-slate-500 hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400 transition-colors" title="Google Scholar">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5L12 0l12 9.5l-1.933 1.542L12 4.312L5.242 13.769zM12 15.313L21.467 22.5L24 21.042L12 12.5L0 21.042L2.533 22.5L12 15.313z"/></svg>
+                        <span class="sr-only">Google Scholar</span>
+                    </a>
+                    <a href="https://in.linkedin.com/in/ranjan-sarkar" class="text-slate-500 hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400 transition-colors" title="LinkedIn">
+                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" /></svg>
+                        <span class="sr-only">LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+        <div class="container mx-auto px-6 py-4 text-center text-slate-500 dark:text-slate-400">
+            <p>&copy; 2024 Ranjan Sarkar. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- THEME TOGGLE SCRIPT ---
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // Function to set the theme icons based on current theme
+        function setIconVisibility() {
+            if (document.documentElement.classList.contains('dark')) {
+                themeToggleLightIcon.classList.remove('hidden');
+                themeToggleDarkIcon.classList.add('hidden');
+            } else {
+                themeToggleDarkIcon.classList.remove('hidden');
+                themeToggleLightIcon.classList.add('hidden');
+            }
+        }
+
+        // Set initial icons on page load
+        setIconVisibility();
+
+        themeToggleBtn.addEventListener('click', function() {
+            // Toggle the 'dark' class on the root <html> element
+            document.documentElement.classList.toggle('dark');
+            
+            // Update localStorage with the new theme preference
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+            
+            // Update the button icons
+            setIconVisibility();
+        });
+
+        // --- SCROLL FADE-IN SCRIPT ---
+        const sections = document.querySelectorAll('.section-fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
