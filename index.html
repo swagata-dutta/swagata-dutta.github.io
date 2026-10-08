@@ -189,7 +189,7 @@
 
         <!-- News Section (newest first) -->
         <section id="news" class="py-20 section-fade-in border-t border-slate-200/80 dark:border-slate-800/80">
-            <div class="max-w-3xl mx-auto">
+            <div>
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold mb-3 text-slate-900 dark:text-white">News</h2>
                     <p class="text-slate-600 dark:text-slate-400">Recent updates and milestones.</p>
@@ -197,9 +197,9 @@
 
                 <!-- News as a growing path graph: each update is a vertex, joined to the next by an edge.
                      The newest (first) vertex is filled and pulses; the path ends in a dashed edge. To add news, copy an <li> to the top. -->
-                <ol class="max-w-2xl mx-auto">
+                <ol>
                     <li class="group grid grid-cols-[1rem_1fr] sm:grid-cols-[5.5rem_1rem_1fr] gap-x-4 sm:gap-x-5">
-                        <time datetime="2026-07" class="col-start-2 row-start-1 sm:col-start-1 sm:row-span-2 sm:text-right sm:pt-0.5 text-xs sm:text-sm font-semibold tracking-wide tabular-nums text-teal-700 dark:text-teal-400">Jul 2026</time>
+                        <time datetime="2026-07" class="col-start-2 row-start-1 sm:col-start-1 sm:row-span-2 sm:pt-0.5 text-xs sm:text-sm font-semibold tracking-wide tabular-nums text-teal-700 dark:text-teal-400">Jul 2026</time>
                         <div aria-hidden="true" class="col-start-1 row-start-1 row-span-2 sm:col-start-2 flex flex-col items-center">
                             <span class="relative mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
                                 <span class="absolute inset-0 hidden group-first:block rounded-full bg-teal-400/40 motion-safe:animate-ping"></span>
@@ -212,7 +212,7 @@
                         </p>
                     </li>
                     <li class="group grid grid-cols-[1rem_1fr] sm:grid-cols-[5.5rem_1rem_1fr] gap-x-4 sm:gap-x-5">
-                        <time datetime="2025-12" class="col-start-2 row-start-1 sm:col-start-1 sm:row-span-2 sm:text-right sm:pt-0.5 text-xs sm:text-sm font-semibold tracking-wide tabular-nums text-teal-700 dark:text-teal-400">Dec 2025</time>
+                        <time datetime="2025-12" class="col-start-2 row-start-1 sm:col-start-1 sm:row-span-2 sm:pt-0.5 text-xs sm:text-sm font-semibold tracking-wide tabular-nums text-teal-700 dark:text-teal-400">Dec 2025</time>
                         <div aria-hidden="true" class="col-start-1 row-start-1 row-span-2 sm:col-start-2 flex flex-col items-center">
                             <span class="relative mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
                                 <span class="absolute inset-0 hidden group-first:block rounded-full bg-teal-400/40 motion-safe:animate-ping"></span>
@@ -225,7 +225,7 @@
                         </p>
                     </li>
                     <li class="group grid grid-cols-[1rem_1fr] sm:grid-cols-[5.5rem_1rem_1fr] gap-x-4 sm:gap-x-5">
-                        <time datetime="2024-07" class="col-start-2 row-start-1 sm:col-start-1 sm:row-span-2 sm:text-right sm:pt-0.5 text-xs sm:text-sm font-semibold tracking-wide tabular-nums text-teal-700 dark:text-teal-400">Jul 2024</time>
+                        <time datetime="2024-07" class="col-start-2 row-start-1 sm:col-start-1 sm:row-span-2 sm:pt-0.5 text-xs sm:text-sm font-semibold tracking-wide tabular-nums text-teal-700 dark:text-teal-400">Jul 2024</time>
                         <div aria-hidden="true" class="col-start-1 row-start-1 row-span-2 sm:col-start-2 flex flex-col items-center">
                             <span class="relative mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
                                 <span class="absolute inset-0 hidden group-first:block rounded-full bg-teal-400/40 motion-safe:animate-ping"></span>
@@ -914,10 +914,12 @@
                 navPinned = null;
                 scrollToElement(el);
 
-                el.classList.remove('search-flash');
+                el.classList.remove('search-flash', 'search-flash-round');
                 void el.offsetWidth; // restart the animation
+                // Square-cornered targets get rounded corners while outlined; cards keep their own rounding
+                if (getComputedStyle(el).borderTopLeftRadius === '0px') el.classList.add('search-flash-round');
                 el.classList.add('search-flash', 'search-target');
-                setTimeout(() => el.classList.remove('search-flash'), 2400);
+                setTimeout(() => el.classList.remove('search-flash', 'search-flash-round'), 2400);
                 highlightOnPage(el, r.hits);
 
                 // Move focus to the result for keyboard and screen reader users
@@ -954,6 +956,11 @@
                 document.body.style.overflow = '';
                 document.body.style.paddingRight = '';
                 openBtn.setAttribute('aria-expanded', 'false');
+                // Start fresh next time: clear the query and its results
+                input.value = '';
+                results = [];
+                list.textContent = '';
+                input.removeAttribute('aria-activedescendant');
                 if (restoreFocus && lastFocus) lastFocus.focus();
             }
 
