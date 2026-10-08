@@ -3,55 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swagata Dutta | PhD Scholar in Mathematics, IIT Kharagpur</title>
+    <title>Swagata Dutta - PhD Scholar in Mathematics, IIT Kharagpur</title>
     <meta name="description" content="Academic Portfolio of Swagata Dutta, PhD Scholar in the Department of Mathematics at Indian Institute of Technology Kharagpur specializing in Spectral Graph Theory and Permanental Polynomials.">
     <meta name="author" content="Swagata Dutta">
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#f0fdfa',
-                            100: '#ccfbf1',
-                            500: '#14b8a6',
-                            600: '#0d9488',
-                            700: '#0f766e',
-                            800: '#115e59',
-                            900: '#134e4a',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        /* Fade-in animation for sections */
-        .section-fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .section-fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-</head>
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300 relative min-h-screen selection:bg-teal-500 selection:text-white">
 
     <!-- Theme Switcher Logic to prevent Flash of Unstyled Content (FOUC) -->
     <script>
@@ -61,6 +15,17 @@
             document.documentElement.classList.remove('dark');
         }
     </script>
+
+    <!-- Precompiled Tailwind CSS (rebuild: see README) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Google Fonts: Inter (loaded without blocking render) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300 relative min-h-screen selection:bg-teal-500 selection:text-white">
 
     <!-- Graph Theory Interactive Canvas Background -->
     <canvas id="graph-network-canvas" class="fixed inset-0 pointer-events-none z-0 w-full h-full" aria-hidden="true"></canvas>
@@ -121,20 +86,26 @@
     <header class="bg-white/85 dark:bg-slate-900/85 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-slate-200/60 dark:border-slate-800/60">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Brand / Logo -->
-            <a href="#" class="text-xl font-bold text-slate-900 dark:text-white hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+            <a href="#" class="whitespace-nowrap text-xl font-bold text-slate-900 dark:text-white hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
                 Swagata Dutta
             </a>
 
             <!-- Desktop Navigation Links -->
             <div class="hidden md:flex items-center space-x-7 font-medium text-sm">
-                <a href="#about" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">About</a>
-                <a href="#academic" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Academic</a>
-                <a href="#research" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Research</a>
-                <a href="#teaching" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Teaching</a>
+                <a href="#about" class="text-slate-600 dark:text-slate-300 aria-[current=location]:text-teal-600 dark:aria-[current=location]:text-teal-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">About</a>
+                <a href="#news" class="text-slate-600 dark:text-slate-300 aria-[current=location]:text-teal-600 dark:aria-[current=location]:text-teal-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">News</a>
+                <a href="#research" class="text-slate-600 dark:text-slate-300 aria-[current=location]:text-teal-600 dark:aria-[current=location]:text-teal-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Research</a>
+                <a href="#academic" class="text-slate-600 dark:text-slate-300 aria-[current=location]:text-teal-600 dark:aria-[current=location]:text-teal-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Academic</a>
+                <a href="#teaching" class="text-slate-600 dark:text-slate-300 aria-[current=location]:text-teal-600 dark:aria-[current=location]:text-teal-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Teaching</a>
             </div>
 
-            <!-- Header Controls: Theme Toggle & Mobile Menu -->
-            <div class="flex items-center space-x-3">
+            <!-- Header Controls: Search, Theme Toggle & Mobile Menu -->
+            <div class="flex items-center space-x-1 min-[360px]:space-x-3">
+                <!-- Search Button -->
+                <button id="search-btn" aria-label="Search this page" aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="Control+K Meta+K /" title="Search this page (Ctrl+K or /)" class="p-2 rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+
                 <!-- Theme Toggle Button -->
                 <button id="theme-toggle" aria-label="Toggle dark/light theme" class="p-2 rounded-lg text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -151,10 +122,11 @@
 
         <!-- Mobile Navigation Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-4 space-y-3">
-            <a href="#about" class="block py-1 text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400 font-medium">About</a>
-            <a href="#academic" class="block py-1 text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400 font-medium">Academic Background</a>
-            <a href="#research" class="block py-1 text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400 font-medium">Research Interests</a>
-            <a href="#teaching" class="block py-1 text-slate-700 dark:text-slate-200 hover:text-teal-600 dark:hover:text-teal-400 font-medium">Teaching Assistantship</a>
+            <a href="#about" class="block py-1 text-slate-700 dark:text-slate-200 aria-[current=location]:text-teal-600 dark:aria-[current=location]:text-teal-400 hover:text-teal-600 dark:hover:text-teal-400 font-medium">About</a>
+            <a href="#news" class="block py-1 text-slate-700 dark:text-slate-200 aria-[current=location]:text-teal-600 dark:aria-[current=location]:text-teal-400 hover:text-teal-600 dark:hover:text-teal-400 font-medium">News</a>
+            <a href="#research" class="block py-1 text-slate-700 dark:text-slate-200 aria-[current=location]:text-teal-600 dark:aria-[current=location]:text-teal-400 hover:text-teal-600 dark:hover:text-teal-400 font-medium">Research Interests</a>
+            <a href="#academic" class="block py-1 text-slate-700 dark:text-slate-200 aria-[current=location]:text-teal-600 dark:aria-[current=location]:text-teal-400 hover:text-teal-600 dark:hover:text-teal-400 font-medium">Academic Background</a>
+            <a href="#teaching" class="block py-1 text-slate-700 dark:text-slate-200 aria-[current=location]:text-teal-600 dark:aria-[current=location]:text-teal-400 hover:text-teal-600 dark:hover:text-teal-400 font-medium">Teaching Assistantship</a>
         </div>
     </header>
 
@@ -163,50 +135,20 @@
         <!-- About / Hero Section -->
         <section id="about" class="min-h-[75vh] flex items-center section-fade-in py-10">
             <div class="grid md:grid-cols-3 gap-12 items-center w-full">
-                <!-- Avatar Graphic with Graph Network Motif -->
-                <div class="md:col-span-1 flex justify-center">
-                    <div class="relative w-64 h-64 md:w-72 md:h-72">
-                        <!-- Decorative gradient ring -->
-                        <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-teal-500 via-cyan-500 to-indigo-500 blur-sm opacity-60"></div>
-                        <div class="relative w-full h-full rounded-full bg-gradient-to-b from-teal-700 to-slate-900 flex flex-col items-center justify-center p-6 text-white text-center shadow-xl border-4 border-white dark:border-slate-800 overflow-hidden">
-                            <!-- Background Graph Vector Pattern -->
-                            <svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" viewBox="0 0 100 100" fill="none" stroke="currentColor">
-                                <line x1="20" y1="30" x2="50" y2="20" stroke-width="1" />
-                                <line x1="50" y1="20" x2="80" y2="40" stroke-width="1" />
-                                <line x1="80" y1="40" x2="65" y2="80" stroke-width="1" />
-                                <line x1="65" y1="80" x2="35" y2="75" stroke-width="1" />
-                                <line x1="35" y1="75" x2="20" y2="30" stroke-width="1" />
-                                <line x1="50" y1="20" x2="35" y2="75" stroke-width="0.8" />
-                                <line x1="50" y1="20" x2="65" y2="80" stroke-width="0.8" />
-                                <line x1="20" y1="30" x2="80" y2="40" stroke-width="0.8" />
-                                <circle cx="20" cy="30" r="3" fill="currentColor" />
-                                <circle cx="50" cy="20" r="3" fill="currentColor" />
-                                <circle cx="80" cy="40" r="3" fill="currentColor" />
-                                <circle cx="65" cy="80" r="3" fill="currentColor" />
-                                <circle cx="35" cy="75" r="3" fill="currentColor" />
-                            </svg>
-                            <!-- Initials & Title in Badge -->
-                            <div class="text-4xl md:text-5xl font-extrabold tracking-wider mb-1 z-10">SD</div>
-                            <div class="text-sm font-semibold text-teal-300 z-10">Swagata Dutta</div>
-                            <div class="text-[11px] text-slate-300 mt-1 uppercase tracking-wider z-10">Mathematics &bull; IIT KGP</div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Bio / Information -->
-                <div class="md:col-span-2">
-                    <div class="inline-flex items-center px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-700 dark:text-teal-300 text-xs font-semibold uppercase tracking-wider mb-4">
+                <div class="md:col-span-3 max-w-3xl">
+                    <div class="inline-flex items-center px-3 py-1 rounded-[0.8125rem] bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-700 dark:text-teal-300 text-[11px] sm:text-xs font-semibold uppercase tracking-wide sm:tracking-wider mb-4">
                         <span>PhD Scholar &bull; Department of Mathematics</span>
                     </div>
 
                     <h1 class="text-4xl md:text-5xl font-bold mb-3 text-slate-900 dark:text-white tracking-tight">Swagata Dutta</h1>
                     <p class="text-lg md:text-xl text-teal-700 dark:text-teal-400 font-medium mb-5">
-                        Indian Institute of Technology Kharagpur
+                        <a href="https://www.iitkgp.ac.in/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-4">Indian Institute of Technology Kharagpur</a>
                     </p>
 
                     <div class="space-y-3.5 text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                         <p>
-                            I am a PhD Scholar in the <strong>Department of Mathematics</strong> at the <strong>Indian Institute of Technology (IIT) Kharagpur</strong>, working under the supervision of 
+                            I am a PhD Scholar in the <a href="https://www.iitkgp.ac.in/department/MA" target="_blank" rel="noopener noreferrer" class="font-bold decoration-teal-500 decoration-2 underline-offset-4 hover:underline hover:text-teal-700 dark:hover:text-teal-300 transition-colors">Department of Mathematics</a> at the <a href="https://www.iitkgp.ac.in/" target="_blank" rel="noopener noreferrer" class="font-bold decoration-teal-500 decoration-2 underline-offset-4 hover:underline hover:text-teal-700 dark:hover:text-teal-300 transition-colors">Indian Institute of Technology (IIT) Kharagpur</a>, working under the supervision of 
                             <a href="https://www.iitkgp.ac.in/department/MA/faculty/ma-pratima" target="_blank" rel="noopener noreferrer" class="text-teal-600 dark:text-teal-400 font-semibold hover:underline inline-flex items-center gap-0.5">
                                 Prof. Pratima Panigrahi
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
@@ -239,84 +181,68 @@
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                                 <span class="sr-only">LinkedIn</span>
                             </a>
-                            <a href="https://orcid.org/0000-0001-6000-591X" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" title="ORCID iD: 0000-0001-6000-591X">
-                                <svg class="w-5 h-5 fill-current" viewBox="0 0 256 256">
-                                    <path d="M128,0A128,128,0,1,0,256,128,128,128,0,0,0,128,0ZM86.35,186.26H61.69V69.74H86.35ZM74,56.77a14.41,14.41,0,1,1,14.41-14.41A14.42,14.42,0,0,1,74,56.77Zm120.31,71.39c0,34.58-20.14,58.1-57.85,58.1H102.73V69.74h37.4C175.7,69.74,194.33,93.45,194.33,128.16Zm-24.66,0c0-21.72-10.45-36.86-32.32-36.86H127.39V165h9.94C159.2,165,169.67,149.88,169.67,128.16Z"/>
-                                </svg>
-                                <span class="sr-only">ORCID</span>
-                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Academic Background Section (Timeline) -->
-        <section id="academic" class="py-20 section-fade-in border-t border-slate-200/80 dark:border-slate-800/80">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold mb-3 text-slate-900 dark:text-white">Academic Background</h2>
-                <p class="text-slate-600 dark:text-slate-400">My educational journey and academic qualifications in Mathematics.</p>
-            </div>
-
-            <div class="max-w-3xl mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-teal-500 before:via-cyan-400 before:to-slate-300 dark:before:to-slate-700">
-                
-                <!-- Timeline Item 1: PhD -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-teal-600 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-md">
-                        <!-- Graduation Cap Icon -->
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-5.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
-                    </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 hover:shadow-md transition-shadow">
-                        <div class="flex items-center justify-between space-x-2 mb-1.5 flex-wrap">
-                            <h3 class="font-bold text-slate-900 dark:text-white text-lg">PhD in Mathematics</h3>
-                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300">2024 – Present</span>
-                        </div>
-                        <p class="text-sm font-medium text-teal-700 dark:text-teal-400 mb-2">Indian Institute of Technology Kharagpur</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">
-                            Supervised by <strong>Prof. Pratima Panigrahi</strong>
-                        </p>
-                    </div>
+        <!-- News Section (newest first) -->
+        <section id="news" class="py-20 section-fade-in border-t border-slate-200/80 dark:border-slate-800/80">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-3 text-slate-900 dark:text-white">News</h2>
+                    <p class="text-slate-600 dark:text-slate-400">Recent updates and milestones.</p>
                 </div>
 
-                <!-- Timeline Item 2: MSc -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-teal-600 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-md">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                    </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 hover:shadow-md transition-shadow">
-                        <div class="flex items-center justify-between space-x-2 mb-1.5 flex-wrap">
-                            <h3 class="font-bold text-slate-900 dark:text-white text-lg">M.Sc. in Mathematics</h3>
-                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300">2021 – 2023</span>
+                <!-- News as a growing path graph: each update is a vertex, joined to the next by an edge.
+                     The newest (first) vertex is filled and pulses; the path ends in a dashed edge. To add news, copy an <li> to the top. -->
+                <ol class="max-w-2xl mx-auto">
+                    <li class="group grid grid-cols-[1rem_1fr] sm:grid-cols-[5.5rem_1rem_1fr] gap-x-4 sm:gap-x-5">
+                        <time datetime="2026-07" class="col-start-2 row-start-1 sm:col-start-1 sm:row-span-2 sm:text-right sm:pt-0.5 text-xs sm:text-sm font-semibold tracking-wide tabular-nums text-teal-700 dark:text-teal-400">Jul 2026</time>
+                        <div aria-hidden="true" class="col-start-1 row-start-1 row-span-2 sm:col-start-2 flex flex-col items-center">
+                            <span class="relative mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
+                                <span class="absolute inset-0 hidden group-first:block rounded-full bg-teal-400/40 motion-safe:animate-ping"></span>
+                                <span class="relative h-3 w-3 rounded-full border-2 border-teal-500 bg-slate-50 dark:bg-slate-900 group-first:bg-teal-500 group-hover:bg-teal-500 group-hover:scale-125 transition"></span>
+                            </span>
+                            <span class="news-edge mt-1.5 w-0.5 flex-1 rounded-full bg-gradient-to-b from-teal-500/60 to-teal-500/15"></span>
                         </div>
-                        <p class="text-sm font-medium text-teal-700 dark:text-teal-400 mb-2">Indian Institute of Technology Kharagpur</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">
-                            Project: <em>Laplacian of Graph</em> (Supervised by <strong>Dr. Swaroop Kumar Panda</strong>)
+                        <p class="col-start-2 row-start-2 sm:col-start-3 sm:row-start-1 sm:row-span-2 mt-1 sm:mt-0 pb-10 group-last:pb-4 leading-relaxed text-slate-700 dark:text-slate-300">
+                            Delivered my <strong class="text-slate-900 dark:text-white">PhD registration seminar</strong> in the <a href="https://www.iitkgp.ac.in/department/MA" target="_blank" rel="noopener noreferrer" class="decoration-teal-500 decoration-2 underline-offset-4 hover:underline hover:text-teal-700 dark:hover:text-teal-300 transition-colors">Department of Mathematics</a>, <a href="https://www.iitkgp.ac.in/" target="_blank" rel="noopener noreferrer" class="decoration-teal-500 decoration-2 underline-offset-4 hover:underline hover:text-teal-700 dark:hover:text-teal-300 transition-colors">IIT Kharagpur</a>.
                         </p>
-                    </div>
-                </div>
-
-                <!-- Timeline Item 3: BSc -->
-                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-teal-600 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-md">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                    </div>
-                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 hover:shadow-md transition-shadow">
-                        <div class="flex items-center justify-between space-x-2 mb-1.5 flex-wrap">
-                            <h3 class="font-bold text-slate-900 dark:text-white text-lg">B.Sc. in Mathematics</h3>
-                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300">2018 – 2021</span>
+                    </li>
+                    <li class="group grid grid-cols-[1rem_1fr] sm:grid-cols-[5.5rem_1rem_1fr] gap-x-4 sm:gap-x-5">
+                        <time datetime="2025-12" class="col-start-2 row-start-1 sm:col-start-1 sm:row-span-2 sm:text-right sm:pt-0.5 text-xs sm:text-sm font-semibold tracking-wide tabular-nums text-teal-700 dark:text-teal-400">Dec 2025</time>
+                        <div aria-hidden="true" class="col-start-1 row-start-1 row-span-2 sm:col-start-2 flex flex-col items-center">
+                            <span class="relative mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
+                                <span class="absolute inset-0 hidden group-first:block rounded-full bg-teal-400/40 motion-safe:animate-ping"></span>
+                                <span class="relative h-3 w-3 rounded-full border-2 border-teal-500 bg-slate-50 dark:bg-slate-900 group-first:bg-teal-500 group-hover:bg-teal-500 group-hover:scale-125 transition"></span>
+                            </span>
+                            <span class="news-edge mt-1.5 w-0.5 flex-1 rounded-full bg-gradient-to-b from-teal-500/60 to-teal-500/15"></span>
                         </div>
-                        <p class="text-sm font-medium text-teal-700 dark:text-teal-400 mb-2">Jagannath Kishore College, Purulia</p>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">
-                            Mathematics Honours
+                        <p class="col-start-2 row-start-2 sm:col-start-3 sm:row-start-1 sm:row-span-2 mt-1 sm:mt-0 pb-10 group-last:pb-4 leading-relaxed text-slate-700 dark:text-slate-300">
+                            Attended the <a href="https://carams.in/events/iclaa2025/" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-900 dark:text-white decoration-teal-500 decoration-2 underline-offset-4 hover:underline hover:text-teal-700 dark:hover:text-teal-300 transition-colors">International Conference on Linear Algebra and its Applications (ICLAA 2025)</a> in Manipal, Karnataka.
                         </p>
-                    </div>
-                </div>
-
+                    </li>
+                    <li class="group grid grid-cols-[1rem_1fr] sm:grid-cols-[5.5rem_1rem_1fr] gap-x-4 sm:gap-x-5">
+                        <time datetime="2024-07" class="col-start-2 row-start-1 sm:col-start-1 sm:row-span-2 sm:text-right sm:pt-0.5 text-xs sm:text-sm font-semibold tracking-wide tabular-nums text-teal-700 dark:text-teal-400">Jul 2024</time>
+                        <div aria-hidden="true" class="col-start-1 row-start-1 row-span-2 sm:col-start-2 flex flex-col items-center">
+                            <span class="relative mt-1 flex h-4 w-4 shrink-0 items-center justify-center">
+                                <span class="absolute inset-0 hidden group-first:block rounded-full bg-teal-400/40 motion-safe:animate-ping"></span>
+                                <span class="relative h-3 w-3 rounded-full border-2 border-teal-500 bg-slate-50 dark:bg-slate-900 group-first:bg-teal-500 group-hover:bg-teal-500 group-hover:scale-125 transition"></span>
+                            </span>
+                            <span class="news-edge mt-1.5 w-0.5 flex-1 rounded-full bg-gradient-to-b from-teal-500/60 to-teal-500/15"></span>
+                        </div>
+                        <p class="col-start-2 row-start-2 sm:col-start-3 sm:row-start-1 sm:row-span-2 mt-1 sm:mt-0 pb-10 group-last:pb-4 leading-relaxed text-slate-700 dark:text-slate-300">
+                            Joined <a href="https://www.iitkgp.ac.in/" target="_blank" rel="noopener noreferrer" class="font-bold text-slate-900 dark:text-white decoration-teal-500 decoration-2 underline-offset-4 hover:underline hover:text-teal-700 dark:hover:text-teal-300 transition-colors">IIT Kharagpur</a> as a Doctoral Researcher in the <a href="https://www.iitkgp.ac.in/department/MA" target="_blank" rel="noopener noreferrer" class="decoration-teal-500 decoration-2 underline-offset-4 hover:underline hover:text-teal-700 dark:hover:text-teal-300 transition-colors">Department of Mathematics</a>.
+                        </p>
+                    </li>
+                </ol>
             </div>
         </section>
 
         <!-- Research Interests Section -->
-        <section id="research" class="py-20 bg-slate-100 dark:bg-slate-800/40 rounded-2xl p-8 md:p-12 section-fade-in my-8 border border-slate-200/60 dark:border-slate-800">
+        <section id="research" class="py-20 bg-slate-100 dark:bg-slate-800/40 rounded-2xl px-5 sm:px-8 md:p-12 section-fade-in my-8 border border-slate-200/60 dark:border-slate-800">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold mb-3 text-slate-900 dark:text-white">Research Interests</h2>
@@ -350,6 +276,70 @@
                         </p>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Academic Background Section (Timeline) -->
+        <section id="academic" class="py-20 section-fade-in border-t border-slate-200/80 dark:border-slate-800/80">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold mb-3 text-slate-900 dark:text-white">Academic Background</h2>
+                <p class="text-slate-600 dark:text-slate-400">My educational journey and academic qualifications in Mathematics.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-teal-500 before:via-cyan-400 before:to-slate-300 dark:before:to-slate-700">
+                
+                <!-- Timeline Item 1: PhD -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-teal-600 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-md">
+                        <!-- Graduation Cap Icon -->
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-5.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-slate-800 p-5 sm:p-6 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between gap-x-2 gap-y-1 mb-1.5 flex-wrap">
+                            <h3 class="font-bold text-slate-900 dark:text-white text-lg">PhD in Mathematics</h3>
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-teal-100 text-teal-800 dark:bg-teal-950 dark:text-teal-300">2024 – Present</span>
+                        </div>
+                        <p class="text-sm font-medium text-teal-700 dark:text-teal-400 mb-2"><a href="https://www.iitkgp.ac.in/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-4">Indian Institute of Technology Kharagpur</a></p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">
+                            Supervised by <a href="https://www.iitkgp.ac.in/department/MA/faculty/ma-pratima" target="_blank" rel="noopener noreferrer" class="font-bold decoration-teal-500 decoration-2 underline-offset-4 hover:underline hover:text-teal-700 dark:hover:text-teal-300 transition-colors">Prof. Pratima Panigrahi</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2: MSc -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-teal-600 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-md">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-slate-800 p-5 sm:p-6 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between gap-x-2 gap-y-1 mb-1.5 flex-wrap">
+                            <h3 class="font-bold text-slate-900 dark:text-white text-lg">M.Sc. in Mathematics</h3>
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300">2021 – 2023</span>
+                        </div>
+                        <p class="text-sm font-medium text-teal-700 dark:text-teal-400 mb-2"><a href="https://www.iitkgp.ac.in/" target="_blank" rel="noopener noreferrer" class="hover:underline underline-offset-4">Indian Institute of Technology Kharagpur</a></p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">
+                            Project: <em>Laplacian of Graph</em> (Supervised by <a href="https://www.iitkgp.ac.in/department/MA/faculty/ma-spanda" target="_blank" rel="noopener noreferrer" class="font-bold decoration-teal-500 decoration-2 underline-offset-4 hover:underline hover:text-teal-700 dark:hover:text-teal-300 transition-colors">Dr. Swaroop Kumar Panda</a>)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3: BSc -->
+                <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-teal-600 text-white shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-md">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white dark:bg-slate-800 p-5 sm:p-6 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-700/80 hover:shadow-md transition-shadow">
+                        <div class="flex items-center justify-between gap-x-2 gap-y-1 mb-1.5 flex-wrap">
+                            <h3 class="font-bold text-slate-900 dark:text-white text-lg">B.Sc. in Mathematics</h3>
+                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300">2018 – 2021</span>
+                        </div>
+                        <p class="text-sm font-medium text-teal-700 dark:text-teal-400 mb-2">Jagannath Kishore College, Purulia</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">
+                            Mathematics Honours
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -387,14 +377,13 @@
     <!-- Footer -->
     <footer class="relative z-10 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-t border-slate-200/80 dark:border-slate-800/80 pt-16 pb-12 transition-colors">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-slate-200 dark:border-slate-800">
+            <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1fr)_auto_auto] xl:grid-cols-3 gap-10 pb-12 border-b border-slate-200 dark:border-slate-800">
                 <!-- Col 1: Identity & Bio -->
                 <div class="space-y-3">
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white">Swagata Dutta</h3>
                     <p class="text-sm font-medium text-teal-700 dark:text-teal-400">PhD Scholar &bull; Department of Mathematics</p>
                     <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed max-w-sm">
-                        Indian Institute of Technology Kharagpur, West Bengal, India - 721302.<br>
-                        Supervised by <a href="https://www.iitkgp.ac.in/department/MA/faculty/ma-pratima" target="_blank" rel="noopener noreferrer" class="hover:underline font-semibold text-slate-700 dark:text-slate-300">Prof. Pratima Panigrahi</a>.
+                        Indian Institute of Technology Kharagpur, West Bengal, India - 721302.
                     </p>
                 </div>
 
@@ -403,22 +392,23 @@
                     <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4">Quick Links</h4>
                     <ul class="space-y-2.5 text-sm">
                         <li><a href="#about" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">About Me</a></li>
-                        <li><a href="#academic" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Academic Background</a></li>
+                        <li><a href="#news" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">News</a></li>
                         <li><a href="#research" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Research Interests</a></li>
+                        <li><a href="#academic" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Academic Background</a></li>
                         <li><a href="#teaching" class="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">Teaching Assistantship</a></li>
                     </ul>
                 </div>
 
-                <!-- Col 3: Academic & Professional Profiles (Email, LinkedIn, ORCID) -->
+                <!-- Col 3: Contact (Email, LinkedIn) -->
                 <div>
-                    <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4">Connect & Profiles</h4>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-4">Contact</h4>
                     <div class="space-y-3 text-sm">
                         <!-- Email -->
                         <a href="mailto:swagatadutta2001.24@kgpian.iitkgp.ac.in" class="flex items-center space-x-3 text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors group">
                             <div class="w-8 h-8 rounded-lg bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-600 dark:text-teal-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </div>
-                            <span class="break-all text-xs sm:text-sm">swagatadutta2001.24@kgpian.iitkgp.ac.in</span>
+                            <span class="whitespace-nowrap text-xs max-[359px]:text-[11px] sm:text-sm md:text-xs lg:text-sm">swagatadutta2001.24@kgpian.iitkgp.ac.in</span>
                         </a>
 
                         <!-- LinkedIn -->
@@ -426,17 +416,7 @@
                             <div class="w-8 h-8 rounded-lg bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800 text-sky-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
                             </div>
-                            <span class="text-xs sm:text-sm font-medium">LinkedIn Profile</span>
-                        </a>
-
-                        <!-- ORCID -->
-                        <a href="https://orcid.org/0000-0001-6000-591X" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-3 text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors group">
-                            <div class="w-8 h-8 rounded-lg bg-[#a6ce39]/10 border border-[#a6ce39]/30 text-[#a6ce39] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-                                <svg class="w-4 h-4 fill-[#a6ce39]" viewBox="0 0 256 256">
-                                    <path d="M128,0A128,128,0,1,0,256,128,128,128,0,0,0,128,0ZM86.35,186.26H61.69V69.74H86.35ZM74,56.77a14.41,14.41,0,1,1,14.41-14.41A14.42,14.42,0,0,1,74,56.77Zm120.31,71.39c0,34.58-20.14,58.1-57.85,58.1H102.73V69.74h37.4C175.7,69.74,194.33,93.45,194.33,128.16Zm-24.66,0c0-21.72-10.45-36.86-32.32-36.86H127.39V165h9.94C159.2,165,169.67,149.88,169.67,128.16Z"/>
-                                </svg>
-                            </div>
-                            <span class="text-xs sm:text-sm font-medium font-mono">ORCID: 0000-0001-6000-591X</span>
+                            <span class="text-xs sm:text-sm font-medium">LinkedIn</span>
                         </a>
                     </div>
                 </div>
@@ -451,6 +431,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- Page Search Dialog -->
+    <div id="search-dialog" class="hidden fixed inset-0 z-[60]" role="dialog" aria-modal="true" aria-labelledby="search-label">
+        <div data-search-close class="absolute inset-0 bg-slate-900/40 dark:bg-slate-950/70 backdrop-blur-sm"></div>
+        <div class="relative mx-auto mt-4 sm:mt-24 w-[calc(100%-2rem)] max-w-xl rounded-xl bg-white dark:bg-slate-800 shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+            <div class="flex items-center gap-3 px-4 border-b border-slate-200 dark:border-slate-700">
+                <svg class="w-5 h-5 shrink-0 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <label id="search-label" for="search-input" class="sr-only">Search this page</label>
+                <input id="search-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" placeholder="Search research, degrees, courses, contact…" role="combobox" aria-expanded="true" aria-controls="search-results" aria-autocomplete="list" class="w-full min-w-0 py-4 bg-transparent text-base text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none">
+                <kbd class="hidden sm:inline-block shrink-0 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-600 text-[11px] font-medium text-slate-400 font-sans">Esc</kbd>
+                <button type="button" data-search-close class="sm:hidden shrink-0 text-sm font-medium text-teal-700 dark:text-teal-400">Cancel</button>
+            </div>
+            <div id="search-status" class="px-5 pt-3 text-[11px] font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500" aria-live="polite"></div>
+            <ul id="search-results" role="listbox" aria-label="Search results" class="max-h-[min(60vh,28rem)] overflow-y-auto overscroll-contain p-2"></ul>
+            <div class="hidden sm:flex items-center gap-4 px-4 py-2.5 border-t border-slate-200 dark:border-slate-700 text-[11px] text-slate-400 dark:text-slate-500">
+                <span><kbd class="font-sans font-semibold">↑</kbd> <kbd class="font-sans font-semibold">↓</kbd> to navigate</span>
+                <span><kbd class="font-sans font-semibold">Enter</kbd> to jump</span>
+                <span><kbd class="font-sans font-semibold">Esc</kbd> to close</span>
+            </div>
+        </div>
+    </div>
 
     <script>
         // --- THEME TOGGLE SCRIPT ---
@@ -512,6 +513,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
@@ -522,152 +524,484 @@
             observer.observe(section);
         });
 
-        // --- INTERACTIVE GRAPH THEORY CANVAS BACKGROUND ---
+        // --- IN-PAGE NAVIGATION: header-aware scrolling & current-section highlight ---
+        const siteHeader = document.querySelector('header');
+        const navSections = [...document.querySelectorAll('main section[id]')];
+        const navLinks = [...document.querySelectorAll('header a[href^="#"]')].filter(a => a.getAttribute('href').length > 1);
+        let navPinned = null; // section chosen from the menu; stays highlighted while scrolling to it
+
+        // Layout position (ignores the fade-in translate, so not-yet-revealed sections are measured correctly)
+        function pageTop(el) {
+            let y = 0;
+            for (; el; el = el.offsetParent) y += el.offsetTop;
+            return y;
+        }
+
+        function scrollToElement(el) {
+            const top = el === navSections[0] ? 0 : Math.max(0, pageTop(el) - siteHeader.offsetHeight - 16);
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top, behavior: reduceMotion ? 'instant' : 'smooth' });
+            return top;
+        }
+
+        function updateActiveNav() {
+            let current = navSections[0];
+            const line = siteHeader.offsetHeight + window.innerHeight * 0.3;
+            for (const s of navSections) if (s.getBoundingClientRect().top <= line) current = s;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            if (window.scrollY >= maxScroll - 2) current = navSections[navSections.length - 1];
+
+            if (navPinned) {
+                const dest = Math.min(navPinned.top, maxScroll);
+                if (Math.abs(window.scrollY - dest) <= 2) navPinned.arrived = true;
+                else if (navPinned.arrived) navPinned = null;
+                if (navPinned) current = navPinned.el;
+            }
+            navLinks.forEach(a => {
+                if (a.getAttribute('href') === '#' + current.id) a.setAttribute('aria-current', 'location');
+                else a.removeAttribute('aria-current');
+            });
+        }
+
+        let navQueued = false;
+        window.addEventListener('scroll', () => {
+            if (navQueued) return;
+            navQueued = true;
+            requestAnimationFrame(() => { navQueued = false; updateActiveNav(); });
+        }, { passive: true });
+        window.addEventListener('resize', updateActiveNav);
+        // A manual scroll gesture cancels the highlight pinned by a menu click
+        ['wheel', 'touchstart'].forEach(type => window.addEventListener(type, () => { navPinned = null; }, { passive: true }));
+
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a[href^="#"]');
+            if (!link || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+            const id = link.getAttribute('href').slice(1);
+            const target = id ? document.getElementById(id) : navSections[0];
+            if (!target) return;
+            e.preventDefault();
+            const top = scrollToElement(target);
+            if (navSections.includes(target)) navPinned = { el: target, top, arrived: false };
+            history.pushState(null, '', id ? '#' + id : location.pathname + location.search);
+            updateActiveNav();
+        });
+
+        // Opening the page with a #section link: correct the browser's jump once the layout is ready
+        window.addEventListener('load', () => {
+            const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+            if (target) window.scrollTo({ top: target === navSections[0] ? 0 : Math.max(0, pageTop(target) - siteHeader.offsetHeight - 16), behavior: 'instant' });
+            updateActiveNav();
+        });
+        updateActiveNav();
+
+        // --- PAGE SEARCH (typo-tolerant, synonym-aware, keyboard accessible) ---
         (function() {
-            const canvas = document.getElementById('graph-network-canvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            if (!ctx) return;
+            const dialog = document.getElementById('search-dialog');
+            const input = document.getElementById('search-input');
+            const list = document.getElementById('search-results');
+            const status = document.getElementById('search-status');
+            const openBtn = document.getElementById('search-btn');
+            if (!dialog || !input || !list || !status || !openBtn) return;
 
-            let width = window.innerWidth;
-            let height = window.innerHeight;
-            let dpr = window.devicePixelRatio || 1;
-            let nodes = [];
-            const mouse = { x: null, y: null, maxDist: 160 };
+            // Filler words ignored in natural-language queries ("where did she study?")
+            const STOPWORDS = new Set(['a', 'an', 'the', 'of', 'in', 'on', 'at', 'to', 'for', 'and', 'or', 'is', 'are', 'was', 'were', 'be', 'been', 'what', 'which', 'who', 'whom', 'where', 'when', 'how', 'why', 'does', 'do', 'did', 'has', 'have', 'had', 'i', 'me', 'my', 'she', 'her', 'hers', 'he', 'him', 'his', 'they', 'them', 'their', 'you', 'your', 'show', 'find', 'tell', 'give', 'list', 'with', 'from', 'by', 'any', 'some', 'this', 'that', 'there', 'page', 'site']);
 
-            function resize() {
-                width = window.innerWidth;
-                height = window.innerHeight;
-                dpr = window.devicePixelRatio || 1;
-                canvas.width = Math.floor(width * dpr);
-                canvas.height = Math.floor(height * dpr);
-                canvas.style.width = width + 'px';
-                canvas.style.height = height + 'px';
-                ctx.setTransform(1, 0, 0, 1, 0, 0);
-                ctx.scale(dpr, dpr);
-                initNodes();
-            }
+            // A query word also matches any of its related words on the page
+            const EDUCATION = ['academic', 'phd', 'msc', 'bsc', 'college', 'institute'];
+            const SUPERVISION = ['supervised', 'supervision'];
+            const COURSES = ['teaching', 'assistantship', 'ma11004', 'ma11003'];
+            const PLACE = ['kharagpur', 'bengal', 'india'];
+            const SYNONYMS = {
+                study: EDUCATION, studied: EDUCATION, studies: EDUCATION, education: EDUCATION, educational: EDUCATION,
+                degree: EDUCATION, degrees: EDUCATION, qualification: EDUCATION, qualifications: EDUCATION,
+                university: ['institute', 'college', 'iit'], school: ['institute', 'college'],
+                doctorate: ['phd'], doctoral: ['phd'], doctor: ['phd'],
+                master: ['msc'], masters: ['msc'], postgraduate: ['msc'], pg: ['msc'],
+                bachelor: ['bsc', 'honours'], bachelors: ['bsc', 'honours'], undergraduate: ['bsc'], ug: ['bsc'], graduation: ['bsc'], honors: ['honours'],
+                supervisor: SUPERVISION, advisor: SUPERVISION, adviser: SUPERVISION, guide: SUPERVISION, mentor: SUPERVISION, professor: ['prof'],
+                contact: ['email', 'linkedin'], mail: ['email'], reach: ['email', 'linkedin'], social: ['linkedin'], profile: ['linkedin', 'about'],
+                teach: COURSES, ta: COURSES, tutor: COURSES, course: COURSES, courses: COURSES, class: COURSES, classes: COURSES, subject: COURSES, subjects: COURSES,
+                interest: ['research'], interests: ['research'], topic: ['research'], topics: ['research'], area: ['research'], areas: ['research'], work: ['research'], thesis: ['research', 'phd'],
+                eigenvalue: ['eigenvalues', 'spectral'], spectrum: ['spectra', 'spectral'], matrix: ['matrices'], network: ['graph', 'graphs'], networks: ['graph', 'graphs'],
+                math: ['mathematics'], maths: ['mathematics'],
+                iit: ['indian', 'institute', 'technology'], kgp: ['kharagpur'], iitkgp: ['kharagpur', 'iit'],
+                location: PLACE, address: PLACE, based: PLACE, city: PLACE,
+                bio: ['about'], biography: ['about'], intro: ['about'],
+                workshop: ['conference'], symposium: ['conference'], event: ['conference', 'seminar'], events: ['conference', 'seminar'], attend: ['attended'],
+                talk: ['seminar'], presentation: ['seminar'], presented: ['seminar'], joining: ['joined'], admission: ['joined'], update: ['news'], updates: ['news'], latest: ['news'], recent: ['news'], announcement: ['news'], announcements: ['news']
+            };
+            const SECTION_TERMS = { about: 'bio biography introduction overview', news: 'updates announcements latest recent milestones', research: 'topics areas', academic: 'education degrees qualifications timeline', teaching: 'ta courses' };
 
-            function initNodes() {
-                // Adaptive node count based on screen width
-                const count = width < 640 ? 24 : (width < 1024 ? 40 : 55);
-                nodes = [];
-                for (let i = 0; i < count; i++) {
-                    nodes.push({
-                        x: Math.random() * width,
-                        y: Math.random() * height,
-                        vx: (Math.random() - 0.5) * 0.35,
-                        vy: (Math.random() - 0.5) * 0.35,
-                        radius: Math.random() * 1.4 + 1.8,
-                        pulse: Math.random() * Math.PI * 2,
-                        pulseSpeed: 0.015 + Math.random() * 0.02
+            const WORD_RE = /[\p{L}\p{N}]+(?:\.[\p{L}\p{N}]+)*/gu;
+            const norm = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/([a-z0-9])\.(?=[a-z0-9])/g, '$1');
+            const tokenize = s => norm(s).split(/[^a-z0-9]+/).filter(Boolean);
+            const flatten = s => ' ' + norm(s).replace(/[^a-z0-9]+/g, ' ').trim() + ' ';
+            const clean = s => s.replace(/\s+/g, ' ').replace(/\s+([.,;:!?)])/g, '$1').trim();
+            // Visible lines of a card joined with separators, e.g. "2024 – Present · Indian Institute of Technology Kharagpur"
+            const linesOf = el => el.innerText.split('\n').map(clean).filter(Boolean);
+
+            // --- Index: built once from the page content on first open ---
+            let docs = null;
+            function buildIndex() {
+                docs = [];
+                const add = (kind, section, title, body, el, extra) => {
+                    title = clean(title);
+                    body = clean(body);
+                    const titleTokens = tokenize(title);
+                    docs.push({
+                        kind, section, title, body, el,
+                        titleSet: new Set(kind === 'news' ? [] : titleTokens), // news titles are full sentences: no heading boost
+                        tokens: [...new Set(titleTokens.concat(tokenize(body + ' ' + (extra || ''))))],
+                        flat: flatten(title + ' ' + body)
                     });
+                };
+
+                document.querySelectorAll('main section[id]').forEach(section => {
+                    const h2 = section.querySelector('h2');
+                    const name = h2 ? clean(h2.textContent) : 'About';
+                    const intro = h2 ? section.querySelector('h2 + p') : null;
+                    add('section', name, name, intro ? intro.textContent : 'PhD Scholar, Department of Mathematics, IIT Kharagpur', section, SECTION_TERMS[section.id]);
+
+                    // Cards (research topics, degrees) are titled by their heading
+                    section.querySelectorAll('h3').forEach(h3 => {
+                        const card = h3.closest('.rounded-xl') || h3.parentElement;
+                        const title = clean(h3.textContent);
+                        add('item', name, title, linesOf(card).filter(line => line !== title).join(' · '), card);
+                    });
+
+                    // Hero heading with its subtitle
+                    const h1 = section.querySelector('h1');
+                    if (h1) {
+                        const pill = section.querySelector('.inline-flex');
+                        const subtitle = h1.nextElementSibling;
+                        add('item', name, h1.textContent, (pill ? pill.textContent + '. ' : '') + (subtitle ? subtitle.textContent : ''), h1.parentElement);
+                    }
+
+                    // Standalone paragraphs, list items and topic badges
+                    section.querySelectorAll('p, li, .flex-wrap > span').forEach(el => {
+                        if (el.parentElement.closest('.rounded-xl') || (el.tagName !== 'LI' && el.closest('li')) || el === intro || (h1 && el === h1.nextElementSibling)) return;
+                        const text = clean(el.textContent);
+                        const time = el.tagName === 'LI' && el.querySelector('time');
+                        if (time) {
+                            // News item: the update itself is the title, its date the detail
+                            const when = clean(time.textContent);
+                            add('news', name, clean(text.replace(when, '')), when, el, 'news');
+                        } else if (el.tagName === 'LI') {
+                            const parts = text.split(/\s[–-]\s/);
+                            add('item', name, parts[parts.length - 1], text, el);
+                        } else if (el.tagName === 'SPAN') {
+                            add('tag', name, text, 'Research focus area', el);
+                        } else {
+                            add('item', name, h1 ? 'Biography' : name, text, el);
+                        }
+                    });
+                });
+
+                // Footer contact details
+                const email = document.querySelector('footer a[href^="mailto:"]');
+                const linkedin = document.querySelector('footer a[href*="linkedin.com"]');
+                const address = document.querySelector('footer p.max-w-sm');
+                if (email) {
+                    add('section', 'Contact', 'Contact', 'Email and LinkedIn', email.closest('div').parentElement, 'reach connect');
+                    add('item', 'Contact', 'Email', email.textContent, email, 'contact mail');
                 }
+                if (linkedin) add('item', 'Contact', 'LinkedIn', 'linkedin.com/in/swagata-maths', linkedin, 'contact social profile connect');
+                if (address) add('item', 'Contact', 'Address', address.textContent, address, 'location');
             }
 
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(resize, 100);
-            });
+            // --- Matching & ranking ---
+            function editDistance(a, b, max) {
+                if (Math.abs(a.length - b.length) > max) return max + 1;
+                let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+                for (let i = 1; i <= a.length; i++) {
+                    const cur = [i];
+                    let rowMin = i;
+                    for (let j = 1; j <= b.length; j++) {
+                        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+                        if (cur[j] < rowMin) rowMin = cur[j];
+                    }
+                    if (rowMin > max) return max + 1;
+                    prev = cur;
+                }
+                return prev[b.length];
+            }
 
-            window.addEventListener('mousemove', (e) => {
-                mouse.x = e.clientX;
-                mouse.y = e.clientY;
-            });
+            // How well a query word matches a page word: exact > prefix > substring > typo (0 = no match)
+            function wordScore(q, t) {
+                if (t === q) return 1;
+                if (q.length >= 2 && t.startsWith(q)) return 0.85;
+                if (q.length >= 3 && t.length >= 12 && t.includes(q)) return 0.6; // inside long joined-up words, e.g. email domains
+                if (q.length >= 4 && /[a-z]/.test(q)) { // no typo matching for numbers (2021 ≠ 2026)
+                    const max = q.length >= 8 ? 2 : 1;
+                    const d = Math.min(editDistance(q, t, max), t.length > q.length ? editDistance(q, t.slice(0, q.length), max) : max + 1);
+                    if (d <= max) return 0.55 - 0.1 * d;
+                }
+                return 0;
+            }
 
-            window.addEventListener('mouseleave', () => {
-                mouse.x = null;
-                mouse.y = null;
-            });
+            function variantsOf(term) {
+                const variants = [[term, 1]];
+                for (const key in SYNONYMS) {
+                    if (key === term || (term.length >= 4 && key.startsWith(term))) {
+                        SYNONYMS[key].forEach(s => variants.push([s, 0.6]));
+                    }
+                }
+                return variants;
+            }
+
+            function search(query) {
+                if (!docs) buildIndex();
+                let terms = [...new Set(tokenize(query))];
+                const meaningful = terms.filter(t => !STOPWORDS.has(t));
+                if (meaningful.length) terms = meaningful;
+                if (!terms.length) return { list: [], partial: false };
+
+                const termVariants = terms.map(variantsOf);
+                const phrase = flatten(query);
+                const scored = [];
+                for (const doc of docs) {
+                    let total = 0, matched = 0;
+                    const hits = new Set();
+                    for (const variants of termVariants) {
+                        let best = 0;
+                        for (const t of doc.tokens) {
+                            let s = 0;
+                            for (const [v, w] of variants) s = Math.max(s, wordScore(v, t) * w);
+                            if (s > 0) {
+                                hits.add(t);
+                                if (doc.titleSet.has(t)) s *= 1.6;
+                                if (s > best) best = s;
+                            }
+                        }
+                        if (best > 0) { matched++; total += best; }
+                    }
+                    if (!matched) continue;
+                    if (terms.length > 1 && doc.flat.includes(phrase)) total += 1;
+                    if (doc.kind === 'section') total *= 0.9;
+                    else if (doc.kind === 'tag') total *= 0.8;
+                    scored.push({ doc, total, matched, hits });
+                }
+                // Prefer results matching every query word; otherwise fall back to the closest partial matches
+                const full = scored.filter(r => r.matched === terms.length);
+                const pool = full.length ? full : scored;
+                pool.sort((a, b) => b.matched - a.matched || b.total - a.total);
+                return { list: pool.slice(0, 8), partial: !full.length && pool.length > 0 };
+            }
+
+            // --- Rendering ---
+            let results = [];
+            let active = 0;
+
+            function appendHighlighted(parent, text, hits) {
+                let last = 0;
+                for (const m of text.matchAll(WORD_RE)) {
+                    if (!hits.has(norm(m[0]))) continue;
+                    parent.append(text.slice(last, m.index));
+                    const mark = document.createElement('mark');
+                    mark.className = 'bg-transparent font-semibold text-teal-700 dark:text-teal-300';
+                    mark.textContent = m[0];
+                    parent.append(mark);
+                    last = m.index + m[0].length;
+                }
+                parent.append(text.slice(last));
+            }
+
+            function snippetOf(text, hits) {
+                for (const m of text.matchAll(WORD_RE)) {
+                    if (!hits.has(norm(m[0]))) continue;
+                    if (m.index <= 60) return text;
+                    const start = text.lastIndexOf(' ', m.index - 40) + 1;
+                    return '…' + text.slice(start);
+                }
+                return text;
+            }
 
             function render() {
-                ctx.clearRect(0, 0, width, height);
+                const query = input.value.trim();
+                list.textContent = '';
 
-                const isDark = document.documentElement.classList.contains('dark');
-                
-                // Color configuration: Teal theme-adaptive
-                const edgeRgb = isDark ? '45, 212, 191' : '15, 118, 110';
-                const nodeFill = isDark ? 'rgba(45, 212, 191, 0.65)' : 'rgba(13, 148, 136, 0.45)';
-                const nodeHalo = isDark ? 'rgba(45, 212, 191, 0.18)' : 'rgba(13, 148, 136, 0.12)';
-                const mouseEdgeRgb = isDark ? '56, 189, 248' : '14, 165, 233';
-
-                const maxDist = width < 640 ? 100 : 135;
-
-                // 1. Update node positions & draw inter-node edges
-                for (let i = 0; i < nodes.length; i++) {
-                    const n1 = nodes[i];
-
-                    n1.x += n1.vx;
-                    n1.y += n1.vy;
-                    n1.pulse += n1.pulseSpeed;
-
-                    // Bounce softly within window boundaries
-                    if (n1.x <= 0) { n1.x = 0; n1.vx *= -1; }
-                    else if (n1.x >= width) { n1.x = width; n1.vx *= -1; }
-                    if (n1.y <= 0) { n1.y = 0; n1.vy *= -1; }
-                    else if (n1.y >= height) { n1.y = height; n1.vy *= -1; }
-
-                    // Inter-node connections
-                    for (let j = i + 1; j < nodes.length; j++) {
-                        const n2 = nodes[j];
-                        const dx = n1.x - n2.x;
-                        const dy = n1.y - n2.y;
-                        const dist = Math.hypot(dx, dy);
-
-                        if (dist < maxDist) {
-                            const alpha = (1 - dist / maxDist) * (isDark ? 0.22 : 0.15);
-                            ctx.beginPath();
-                            ctx.strokeStyle = `rgba(${edgeRgb}, ${alpha})`;
-                            ctx.lineWidth = 0.85;
-                            ctx.moveTo(n1.x, n1.y);
-                            ctx.lineTo(n2.x, n2.y);
-                            ctx.stroke();
-                        }
-                    }
-
-                    // Mouse proximity connections (interactive graph exploratory effect)
-                    if (mouse.x !== null && mouse.y !== null) {
-                        const mdx = n1.x - mouse.x;
-                        const mdy = n1.y - mouse.y;
-                        const mdist = Math.hypot(mdx, mdy);
-
-                        if (mdist < mouse.maxDist) {
-                            const mAlpha = (1 - mdist / mouse.maxDist) * (isDark ? 0.35 : 0.25);
-                            ctx.beginPath();
-                            ctx.strokeStyle = `rgba(${mouseEdgeRgb}, ${mAlpha})`;
-                            ctx.lineWidth = 1.0;
-                            ctx.moveTo(n1.x, n1.y);
-                            ctx.lineTo(mouse.x, mouse.y);
-                            ctx.stroke();
-                        }
-                    }
+                if (!query) {
+                    if (!docs) buildIndex();
+                    results = docs.filter(d => d.kind === 'section').map(doc => ({ doc, hits: new Set() }));
+                    status.textContent = 'Jump to';
+                } else {
+                    const found = search(query);
+                    results = found.list;
+                    status.textContent = !results.length ? 'No results' : found.partial ? 'Closest matches' : results.length + (results.length === 1 ? ' result' : ' results');
                 }
 
-                // 2. Draw graph vertices (nodes)
-                for (let i = 0; i < nodes.length; i++) {
-                    const n = nodes[i];
-                    const r = n.radius + Math.sin(n.pulse) * 0.45;
-
-                    // Subtle vertex halo
-                    ctx.beginPath();
-                    ctx.arc(n.x, n.y, r + 2.5, 0, Math.PI * 2);
-                    ctx.fillStyle = nodeHalo;
-                    ctx.fill();
-
-                    // Vertex core
-                    ctx.beginPath();
-                    ctx.arc(n.x, n.y, r, 0, Math.PI * 2);
-                    ctx.fillStyle = nodeFill;
-                    ctx.fill();
+                if (!results.length) {
+                    const li = document.createElement('li');
+                    li.className = 'px-3 py-6 text-center text-sm text-slate-500 dark:text-slate-400';
+                    li.append('No matches for “' + query + '”. Try ');
+                    ['graph theory', 'PhD', 'teaching'].forEach((s, i, all) => {
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = 'font-medium text-teal-700 dark:text-teal-400 hover:underline';
+                        btn.textContent = s;
+                        btn.addEventListener('click', () => { input.value = s; active = 0; render(); input.focus(); });
+                        li.append(btn, i < all.length - 2 ? ', ' : i === all.length - 2 ? ' or ' : '.');
+                    });
+                    list.append(li);
+                    input.removeAttribute('aria-activedescendant');
+                    return;
                 }
 
-                requestAnimationFrame(render);
+                results.forEach((r, i) => {
+                    const li = document.createElement('li');
+                    li.id = 'search-opt-' + i;
+                    li.dataset.index = i;
+                    li.setAttribute('role', 'option');
+                    li.className = 'px-3 py-2.5 rounded-lg cursor-pointer aria-selected:bg-teal-50 dark:aria-selected:bg-teal-950/50';
+
+                    const head = document.createElement('div');
+                    head.className = 'flex items-baseline gap-3';
+                    const title = document.createElement('span');
+                    title.className = 'min-w-0 truncate text-sm font-semibold text-slate-900 dark:text-white';
+                    appendHighlighted(title, r.doc.title, r.hits);
+                    const label = document.createElement('span');
+                    label.className = 'ml-auto shrink-0 text-[10px] font-semibold uppercase tracking-wider text-teal-700 dark:text-teal-400';
+                    label.textContent = r.doc.kind === 'section' ? 'Section' : r.doc.kind === 'tag' ? 'Topic' : r.doc.section;
+                    head.append(title, label);
+                    li.append(head);
+
+                    if (r.doc.body) {
+                        const body = document.createElement('p');
+                        body.className = 'mt-0.5 text-xs leading-relaxed text-slate-500 dark:text-slate-400 line-clamp-2';
+                        appendHighlighted(body, snippetOf(r.doc.body, r.hits), r.hits);
+                        li.append(body);
+                    }
+                    list.append(li);
+                });
+                active = Math.min(active, results.length - 1);
+                updateActive();
             }
 
-            resize();
-            requestAnimationFrame(render);
+            function updateActive() {
+                list.querySelectorAll('[role="option"]').forEach((li, i) => li.setAttribute('aria-selected', i === active ? 'true' : 'false'));
+                const current = document.getElementById('search-opt-' + active);
+                if (current) {
+                    input.setAttribute('aria-activedescendant', current.id);
+                    current.scrollIntoView({ block: 'nearest' });
+                }
+            }
+
+            // --- Jumping to a result ---
+            let highlightTimer;
+            function highlightOnPage(el, hits) {
+                if (!(window.CSS && CSS.highlights && window.Highlight) || !hits.size) return;
+                const ranges = [];
+                const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+                while (walker.nextNode()) {
+                    const node = walker.currentNode;
+                    if (node.parentElement.closest('.sr-only')) continue;
+                    for (const m of node.data.matchAll(WORD_RE)) {
+                        if (!hits.has(norm(m[0]))) continue;
+                        const range = new Range();
+                        range.setStart(node, m.index);
+                        range.setEnd(node, m.index + m[0].length);
+                        ranges.push(range);
+                    }
+                }
+                CSS.highlights.set('search-hit', new Highlight(...ranges));
+                clearTimeout(highlightTimer);
+                highlightTimer = setTimeout(() => CSS.highlights.delete('search-hit'), 4000);
+            }
+
+            function go(r) {
+                close(false);
+                const el = r.doc.el;
+                navPinned = null;
+                scrollToElement(el);
+
+                el.classList.remove('search-flash');
+                void el.offsetWidth; // restart the animation
+                el.classList.add('search-flash', 'search-target');
+                setTimeout(() => el.classList.remove('search-flash'), 2400);
+                highlightOnPage(el, r.hits);
+
+                // Move focus to the result for keyboard and screen reader users
+                if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
+                el.focus({ preventScroll: true });
+            }
+
+            // --- Opening & closing ---
+            let lastFocus = null;
+            const isOpen = () => !dialog.classList.contains('hidden');
+
+            function open() {
+                if (isOpen()) return;
+                lastFocus = document.activeElement;
+                mobileMenu.classList.add('hidden');
+                mobileMenuOpenIcon.classList.remove('hidden');
+                mobileMenuCloseIcon.classList.add('hidden');
+
+                const scrollbar = window.innerWidth - document.documentElement.clientWidth;
+                document.body.style.overflow = 'hidden';
+                if (scrollbar > 0) document.body.style.paddingRight = scrollbar + 'px';
+                dialog.classList.remove('hidden');
+                openBtn.setAttribute('aria-expanded', 'true');
+                input.placeholder = window.innerWidth < 640 ? 'Search this page…' : 'Search research, degrees, courses, contact…';
+                active = 0;
+                render();
+                input.focus();
+                input.select();
+            }
+
+            function close(restoreFocus = true) {
+                if (!isOpen()) return;
+                dialog.classList.add('hidden');
+                document.body.style.overflow = '';
+                document.body.style.paddingRight = '';
+                openBtn.setAttribute('aria-expanded', 'false');
+                if (restoreFocus && lastFocus) lastFocus.focus();
+            }
+
+            openBtn.setAttribute('aria-expanded', 'false');
+            openBtn.addEventListener('click', open);
+            dialog.querySelectorAll('[data-search-close]').forEach(el => el.addEventListener('click', () => close()));
+            input.addEventListener('input', () => { active = 0; render(); });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (!results.length) return;
+                    active = (active + (e.key === 'ArrowDown' ? 1 : -1) + results.length) % results.length;
+                    updateActive();
+                } else if (e.key === 'Enter') {
+                    e.preventDefault();
+                    if (results[active]) go(results[active]);
+                }
+            });
+
+            dialog.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') { e.preventDefault(); close(); }
+                else if (e.key === 'Tab') { e.preventDefault(); input.focus(); }
+            });
+
+            list.addEventListener('click', (e) => {
+                const li = e.target.closest('[role="option"]');
+                if (li) go(results[+li.dataset.index]);
+            });
+            list.addEventListener('mousemove', (e) => {
+                const li = e.target.closest('[role="option"]');
+                if (li && +li.dataset.index !== active) { active = +li.dataset.index; updateActive(); }
+            });
+
+            // Shortcuts: Ctrl/Cmd + K toggles search, "/" opens it
+            document.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+                    e.preventDefault();
+                    isOpen() ? close() : open();
+                } else if (e.key === '/' && !isOpen() && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                    const t = document.activeElement;
+                    if (t && (/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) || t.isContentEditable)) return;
+                    e.preventDefault();
+                    open();
+                }
+            });
         })();
     </script>
+    <script src="assets/js/graph-background.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+/* Fade-in animation for sections */
+.section-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.section-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Anchor jumps land below the sticky header (header height + 1rem); the script refines this */
+main section[id] {
+    scroll-margin-top: 5.25rem;
+}
+
+/* News path graph: the edge after the oldest vertex is a fading dashed tail ("the path continues") */
+#news li:last-child .news-edge {
+    background: repeating-linear-gradient(to bottom, rgba(20, 184, 166, 0.5) 0 4px, transparent 4px 9px);
+    -webkit-mask-image: linear-gradient(to bottom, #000, transparent);
+    mask-image: linear-gradient(to bottom, #000, transparent);
+}
+
+/* 404 page: a walk lights up each vertex of the "0" cycle in turn, and the missing edge flickers */
+.walk-vertex {
+    fill-opacity: 0.9;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: walk-visit 4.8s ease-in-out infinite;
+}
+@keyframes walk-visit {
+    0%, 22%, 100% { fill-opacity: 0.45; transform: scale(1); }
+    8% { fill-opacity: 1; transform: scale(1.45); }
+}
+.broken-edge {
+    stroke-dasharray: 3 5;
+    animation: broken-edge 2.4s ease-in-out infinite;
+}
+@keyframes broken-edge {
+    0%, 100% { stroke-opacity: 0.15; }
+    50% { stroke-opacity: 0.55; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .walk-vertex, .broken-edge { animation: none; }
+    .broken-edge { stroke-opacity: 0.35; }
+}
+
+/* Page search: briefly outline the result the user jumped to and highlight matched words */
+.search-target:focus {
+    outline: none;
+}
+.search-flash {
+    animation: search-flash 2.4s ease-out;
+}
+@keyframes search-flash {
+    0%, 55% { outline: 2px solid rgba(20, 184, 166, 0.75); outline-offset: 6px; }
+    100% { outline: 2px solid rgba(20, 184, 166, 0); outline-offset: 6px; }
+}
+::highlight(search-hit) {
+    background-color: rgba(20, 184, 166, 0.28);
+    color: inherit;
+}
+@media (prefers-reduced-motion: reduce) {
+    .search-target.search-flash { animation-duration: 0.01s; animation-delay: 0s; outline: 2px solid rgba(20, 184, 166, 0.75); outline-offset: 6px; }
+}
+
+/* Large displays (QHD, ultrawide, 4K TV): scale the whole layout proportionally
+   instead of leaving a small 1536px column in the middle of the screen */
+@media (min-width: 2560px) {
+    html { font-size: 125%; }
+    .container { max-width: 96rem; }
+}
+@media (min-width: 3840px) and (min-height: 1800px) {
+    html { font-size: 150%; }
+}
