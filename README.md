@@ -27,3 +27,6 @@ Supervisor: [Prof. Pratima Panigrahi](https://www.iitkgp.ac.in/department/MA/fac
 
 <sub>Editing the site: after changing styles in `index.html`, rebuild the CSS with
 `npx tailwindcss@3.4.17 -c tailwind.config.js -i assets/css/tailwind.src.css -o assets/css/style.css --minify`</sub>
+
+<sub>Background formulas: edit the `data-tex` attributes in `index.html`, then re-typeset them with
+`npm install --no-save katex@0.16.11 && node tools/render-math.js` (delete the generated `node_modules` afterwards)</sub>

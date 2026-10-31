@@ -10,7 +10,7 @@
     let height = window.innerHeight;
     let dpr = window.devicePixelRatio || 1;
     let nodes = [];
-    // Matches the root font-size scaling applied on very large displays (1 up to 1920px wide screens)
+    // Matches the root font-size scaling applied on very large displays (1 up to 2048px wide screens, then growing smoothly)
     let scale = 1;
     const mouse = { x: null, y: null, maxDist: 160 };
 

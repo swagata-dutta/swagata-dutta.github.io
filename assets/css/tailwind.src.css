@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Left/right page gutter, shared by the container, the mobile menu and the 404 page; grows smoothly with the window */
+:root {
+    --page-gutter: clamp(1.25rem, 5vw + 0.25rem, 3rem);
+}
+
 body {
     font-family: 'Inter', sans-serif;
 }
@@ -14,6 +19,99 @@ body {
 .section-fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Background math watermarks: matrices and formulas fixed to the viewport, kept faint so body text stays readable */
+.math-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    color: rgb(15, 118, 110);
+}
+.dark .math-bg {
+    color: rgb(94, 234, 212);
+}
+/* Formulas are KaTeX output (LaTeX fonts); .katex itself scales this size by 1.21 */
+.math-item {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    opacity: 0.13;
+    /* Slow drift; each item sets its own --dx/--dy/--dur. Uses `translate` so Tailwind rotations still apply */
+    animation: math-drift var(--dur, 26s) ease-in-out infinite alternate;
+}
+.dark .math-item {
+    opacity: 0.12;
+}
+@keyframes math-drift {
+    from { translate: 0 0; }
+    to { translate: var(--dx, 8px) var(--dy, -8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .math-item { animation: none; }
+}
+.math-spy svg {
+    display: block;
+    width: 8rem;
+    height: 8rem;
+}
+.math-label {
+    margin-bottom: 0.25rem;
+}
+
+/* Mobile menu: slides down and fades in below the header, links follow one after another */
+.mobile-menu {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    clip-path: inset(0 0 100% 0);
+    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+                clip-path 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 0.3s;
+}
+.mobile-menu.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    clip-path: inset(0 0 -2rem 0); /* negative bottom inset keeps the drop shadow visible */
+    transition-delay: 0s;
+}
+.mobile-menu a {
+    opacity: 0;
+    transform: translateY(-0.375rem);
+    transition: opacity 0.2s ease, transform 0.25s ease, color 0.15s ease;
+}
+.mobile-menu.is-open a {
+    opacity: 1;
+    transform: none;
+    transition-delay: calc(0.06s + var(--i, 0) * 0.04s), calc(0.06s + var(--i, 0) * 0.04s), 0s;
+}
+/* Hamburger icon: three bars that morph into an X while the menu is open */
+.menu-icon {
+    position: relative;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.menu-icon span {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    height: 2px;
+    border-radius: 1px;
+    background: currentColor;
+    transition: top 0.3s ease, transform 0.3s ease, opacity 0.2s ease;
+}
+.menu-icon span:nth-child(1) { top: 5px; }
+.menu-icon span:nth-child(2) { top: 11px; }
+.menu-icon span:nth-child(3) { top: 17px; }
+[aria-expanded="true"] > .menu-icon span:nth-child(1) { top: 11px; transform: rotate(45deg); }
+[aria-expanded="true"] > .menu-icon span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+[aria-expanded="true"] > .menu-icon span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
+@media (prefers-reduced-motion: reduce) {
+    .mobile-menu, .mobile-menu a, .menu-icon span { transition: none; }
 }
 
 /* Anchor jumps land below the sticky header (header height + 1rem); the script refines this */
@@ -75,11 +173,9 @@ main section[id] {
 }
 
 /* Large displays (QHD, ultrawide, 4K TV): scale the whole layout proportionally
-   instead of leaving a small 1536px column in the middle of the screen */
-@media (min-width: 2560px) {
-    html { font-size: 125%; }
-    .container { max-width: 96rem; }
-}
-@media (min-width: 3840px) and (min-height: 1800px) {
-    html { font-size: 150%; }
+   instead of leaving a small 1536px column in the middle of the screen.
+   Grows smoothly from 100% at 2048px wide (125% at 2560×1440, 150% on 4K), so resizing never jumps;
+   the height term keeps short ultrawide screens from scaling too far. The container cap is 96rem. */
+html {
+    font-size: clamp(100%, min(0.78125vw, 1.3889vh), 150%);
 }
