@@ -25,9 +25,11 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
 
-    <!-- KaTeX stylesheet & LaTeX fonts for the pre-rendered background formulas (loaded without blocking render) -->
-    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous"></noscript>
+    <!-- KaTeX 0.16.11 stylesheet & LaTeX fonts (self-hosted) for the pre-rendered background formulas.
+         Loaded without blocking render; the formula layer stays hidden until it applies (html.katex-ready),
+         because unstyled KaTeX markup falls apart into scattered brackets and numbers -->
+    <link rel="preload" as="style" href="assets/vendor/katex/katex.min.css" onload="this.onload=null;this.rel='stylesheet';document.documentElement.classList.add('katex-ready')">
+    <noscript><link rel="stylesheet" href="assets/vendor/katex/katex.min.css"><style>.math-bg { visibility: visible; opacity: 1; }</style></noscript>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-200 transition-colors duration-300 relative min-h-screen selection:bg-teal-500 selection:text-white">
 

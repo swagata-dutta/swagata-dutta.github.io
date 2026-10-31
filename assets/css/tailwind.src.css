@@ -30,6 +30,14 @@ body {
     pointer-events: none;
     user-select: none;
     color: rgb(15, 118, 110);
+    /* Shown only once the KaTeX stylesheet has applied (see index.html <head>) */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.katex-ready .math-bg {
+    visibility: visible;
+    opacity: 1;
 }
 .dark .math-bg {
     color: rgb(94, 234, 212);
