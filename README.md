@@ -27,14 +27,3 @@ Supervisor: [Prof. Pratima Panigrahi](https://www.iitkgp.ac.in/department/MA/fac
 - **ORCID:** [0009-0002-0433-1360](https://orcid.org/0009-0002-0433-1360)
 
 ---
-
-<sub>Editing the site: after changing styles in `index.html`, rebuild the CSS with
-`npx tailwindcss@3.4.17 -c tailwind.config.js -i assets/css/tailwind.src.css -o assets/css/style.css --minify`</sub>
-
-<sub>Background formulas: edit the `data-tex` attributes in `index.html` (and `404.html`, which shares the layer), then re-typeset them with
-`npm install --no-save katex@0.16.11 && node tools/render-math.js` (delete the generated `node_modules` afterwards).
-The KaTeX stylesheet and fonts are self-hosted in `assets/vendor/katex` and must stay on the same KaTeX version.</sub>
-
-<sub>Link preview: the share text is in the `og:` / `twitter:` tags in `index.html`. After changing the hero section, refresh
-the preview image with `npm install --no-save puppeteer-core@23.11.1 && node tools/capture-preview.js` (uses the
-installed Chrome; delete the generated `node_modules` afterwards).</sub>
